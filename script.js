@@ -20,10 +20,13 @@ const todoList = {
             } else {
                 alert('To-do text is required')
             }
-        }
+        } 
     },
     created() {
         this.todo = localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : this.todo;
+    },
+    updated () {
+        localStorage.setItem("todos", JSON.stringify(this.todo));
     }
 }
 
